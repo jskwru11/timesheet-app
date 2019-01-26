@@ -21,11 +21,20 @@ $(document).ready(function () {
 
 
     //addEmployee function
+<<<<<<< HEAD
     $("#btn-add").on("click", function (event) {
         employeeName = $("#employeename").val().trim();
         employeeRole = $("#employeerole").val().trim();
         employeeRate = $("#employeerate").val().trim();
         employeeStartDate = $("#employee-start-date").val().trim();
+=======
+    $(".btnAdd").on("click", function (event) {
+        console.log("here");
+        employeeName = $("#employeeName").val().trim();
+        employeeRole = $("#employeeRole").val().trim();
+        employeeRate = $("#employeeRate").val().trim();
+        employeeStartDate = $("#employeeStartDate").val().trim();
+>>>>>>> bdedf7d3a893b5459f6a2a2cc92f37019ed2d8ff
         console.log(employeeName, employeeRole, employeeRate, employeeStartDate);
         database.ref().push({
             employeeName: employeeName,

@@ -44,7 +44,7 @@ $(document).ready(function () {
         let theEmployeeStartDate = snapshot.val().employeeStartDate;
         let theEmployeeRate = snapshot.val().employeeRate;
         
-        var monthsWorked = moment().diff(moment(date, "MM/DD/YYYY"),"months");
+        var monthsWorked = moment().diff(moment(theEmployeeStartDate, "MM/DD/YYYY"),"months");
         var totalBilled = monthsWorked * theEmployeeRate;
         console.log(monthsWorked);
         console.log(totalBilled);

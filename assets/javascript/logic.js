@@ -45,18 +45,16 @@ $(document).ready(function () {
         let theEmployeeRate = snapshot.val().employeeRate;
         
         var monthsWorked = moment().diff(moment(date, "MM/DD/YYYY"),"months");
-        var totalBilled = monthsWorked * payrate;
-        
+        var totalBilled = monthsWorked * theEmployeeRate;
+        console.log(monthsWorked);
+        console.log(totalBilled);
         console.log("Name: " + theEmployeeName + ", Role: " + theEmployeeRole + ", Start Date: " + theEmployeeStartDate + ", Rate: " + theEmployeeRate);
     }, function (errorObject) {
         console.log("entries-error: " + errorObject.code);
+        
+
     });
+});
 
 
     //function for moment.js to calculate employeeMonthsWorked
-    function employeeCalculations (date, payrate){
-       var monthsWorked = moment().diff(moment(date, "MM/DD/YYYY"),"months");
-        var totalBilled = monthsWorked * payrate;
-
-    }
-});

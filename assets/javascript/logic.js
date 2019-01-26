@@ -21,12 +21,11 @@ $(document).ready(function () {
 
 
     //addEmployee function
-    //TODO: update input field IDs
     $("#btn-add").on("click", function (event) {
-        event.preventDefault();
-        employeeName = $("#employee-name").val().trim();
-        employeeRole = $("#employee-role").val().trim();
-        employeeRate = $("#employee-rate").val().trim();
+        console.log("here");
+        employeeName = $("#employeename").val().trim();
+        employeeRole = $("#employeerole").val().trim();
+        employeeRate = $("#employeerate").val().trim();
         employeeStartDate = $("#employee-start-date").val().trim();
         console.log(employeeName, employeeRole, employeeRate, employeeStartDate);
         database.ref().push({
@@ -39,17 +38,25 @@ $(document).ready(function () {
 
     //listen for added child function
     database.ref().on("child_added", function (snapshot) {
-        //TODO: put in to correct divs, not console.log
+        console.log("there");
         let theEmployeeName = snapshot.val().employeeName;
         let theEmployeeRole = snapshot.val().employeeRole;
         let theEmployeeStartDate = snapshot.val().employeeStartDate;
         let theEmployeeRate = snapshot.val().employeeRate;
+        
+        var monthsWorked = moment().diff(moment(date, "MM/DD/YYYY"),"months");
+        var totalBilled = monthsWorked * payrate;
+        
         console.log("Name: " + theEmployeeName + ", Role: " + theEmployeeRole + ", Start Date: " + theEmployeeStartDate + ", Rate: " + theEmployeeRate);
     }, function (errorObject) {
         console.log("entries-error: " + errorObject.code);
     });
 
-    console.log(moment().diff(moment(1530000, "X"), "months"));
-    //function for moment.js to calculate employeeMonthsWorked
 
+    //function for moment.js to calculate employeeMonthsWorked
+    function employeeCalculations (date, payrate){
+       var monthsWorked = moment().diff(moment(date, "MM/DD/YYYY"),"months");
+        var totalBilled = monthsWorked * payrate;
+
+    }
 });

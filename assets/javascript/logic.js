@@ -22,7 +22,6 @@ $(document).ready(function () {
 
     //addEmployee function
     $("#btn-add").on("click", function (event) {
-        console.log("here");
         employeeName = $("#employeename").val().trim();
         employeeRole = $("#employeerole").val().trim();
         employeeRate = $("#employeerate").val().trim();
@@ -38,20 +37,19 @@ $(document).ready(function () {
 
     //listen for added child function
     database.ref().on("child_added", function (snapshot) {
-        console.log("there");
         let theEmployeeName = snapshot.val().employeeName;
         let theEmployeeRole = snapshot.val().employeeRole;
         let theEmployeeStartDate = snapshot.val().employeeStartDate;
         let theEmployeeRate = snapshot.val().employeeRate;
-        
-        var monthsWorked = moment().diff(moment(theEmployeeStartDate, "MM/DD/YYYY"),"months");
-        var totalBilled = monthsWorked * theEmployeeRate;
+
+        var monthsWorked = moment().diff(moment(theEmployeeStartDate, "MM/DD/YYYY"), "months");
+        var totalBilled = parseInt(monthsWorked) * parseInt(theEmployeeRate);
         console.log(monthsWorked);
         console.log(totalBilled);
         console.log("Name: " + theEmployeeName + ", Role: " + theEmployeeRole + ", Start Date: " + theEmployeeStartDate + ", Rate: " + theEmployeeRate);
     }, function (errorObject) {
         console.log("entries-error: " + errorObject.code);
-        
+
 
     });
 });

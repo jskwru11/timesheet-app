@@ -35,6 +35,11 @@ $(document).ready(function () {
             employeeRate: employeeRate,
             employeeStartDate: employeeStartDate
         });
+        employeeName = $("#employeeName").val("");
+        employeeRole = $("#employeeRole").val("");
+        employeeRate = $("#employeeRate").val("");
+        employeeStartDate = $("#employeeStartDate").val("");
+
     });
 
     //listen for added child function
@@ -44,15 +49,21 @@ $(document).ready(function () {
         let theEmployeeRole = snapshot.val().employeeRole;
         let theEmployeeStartDate = snapshot.val().employeeStartDate;
         let theEmployeeRate = snapshot.val().employeeRate;
-        
-        var monthsWorked = moment().diff(moment(theEmployeeStartDate, "MM/DD/YYYY"),"months");
+
+        var monthsWorked = moment().diff(moment(theEmployeeStartDate, "MM/DD/YYYY"), "months");
         var totalBilled = monthsWorked * theEmployeeRate;
         console.log(monthsWorked);
         console.log(totalBilled);
         console.log("Name: " + theEmployeeName + ", Role: " + theEmployeeRole + ", Start Date: " + theEmployeeStartDate + ", Rate: " + theEmployeeRate);
+
+        // create td
+        let theTdString = "<tr><td>" + theEmployeeName + "</td><td>" + theEmployeeRole + "</td><td>" + theEmployeeStartDate + "</td><td>" + monthsWorked + "</td><td>" + theEmployeeRate + "</td><td>" + totalBilled + "</td></tr>"
+        $("#employeeAdd").append(theTdString);
+
+
     }, function (errorObject) {
         console.log("entries-error: " + errorObject.code);
-        
+
 
     });
 });

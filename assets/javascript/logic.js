@@ -20,8 +20,21 @@ var employeeRate;
 
 
 //addEmployee function
+$("button").on("click", function(event){
 
 
+employeeName = $().val().trim();
+employeeRole= $().val().trim();
+employeeRate = $().val().trim();
+employeeStartDate = $().val().trim();
+var employeeData = {
+    name: employeeName,
+    role: employeeRole,
+    rate: employeeRate,
+    start: employeeStartDate
+}
+database.ref().push({employeeData});
+});
 //listen for added child function
 
 

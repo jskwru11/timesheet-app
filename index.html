@@ -13,6 +13,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
+    <script src="assets/javascript/logic.js"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
@@ -26,63 +27,63 @@
             <h1 class="">Employee Data Management</h1>
             <p>A Comprehensive Directory of Employee Billable Hours</p>
         </div>
-     
-            <div class="container"> 
 
-                <div class="card text-white bg-secondary mb-3">
+        <div class="container">
 
-                    <div class="card-header">Current Employees</div>
+            <div class="card text-white bg-secondary mb-3">
 
-                    <div class="card-body">
+                <div class="card-header">Current Employees</div>
 
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Employee Name</th>
-                                    <th>Role</th>
-                                    <th>Start Date</th>
-                                    <th>Months Worked</th>
-                                    <th>Monthly Rate ($)</th>
-                                    <th>Total Billed ($)</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>test</td>
-                                    <td>test</td>
-                                    <td>test</td>
-                                    <td>test</td>
-                                    <td>test</td>
-                                    <td>test</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                <div class="card-body">
 
-                    </div>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Employee Name</th>
+                                <th>Role</th>
+                                <th>Start Date</th>
+                                <th>Months Worked</th>
+                                <th>Monthly Rate ($)</th>
+                                <th>Total Billed ($)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
                 </div>
+            </div>
 
-                    <div class="card">
-                        <div class="card-header">
-                            Add Employee
-                        </div>
-                        <form class="form-submit">
-                            <div class="form-group form-modify">
-                                <label for="employeeName">Employee Name</label>
-                                <input type="text" class="form-control inputs" id="employeeName" placeholder="Jane Doe">
-                                <label for="employeeRole">Role</label>
-                                <input type="text" class="form-control inputs" id="employeeRole" placeholder="Engineer">
-                                <label for="employeeStartDate">Start Date (MM/DD/YYYY)</label>
-                                <input type="text" class="form-control inputs" id="employeeStartDate" placeholder="01/01/2000">
-                                <label for="employeeRate">Monthly Rate</label>
-                                <input type="text" class="form-control inputs" id="employeeRate" placeholder="2500">
-                                <button class="btn btn-primary btnAdd mt-2">Add Employee</button>
-                            </div>
-                        </form>
-
-                        </div> 
-                    </div>
+            <div class="card">
+                <div class="card-header">
+                    Add Employee
                 </div>
-                            
+                <form class="form-submit">
+                    <div class="form-group form-modify">
+                        <label for="employeeName">Employee Name</label>
+                        <input type="text" class="form-control inputs" id="employeeName" placeholder="Jane Doe">
+                        <label for="employeeRole">Role</label>
+                        <input type="text" class="form-control inputs" id="employeeRole" placeholder="Engineer">
+                        <label for="employeeStartDate">Start Date (MM/DD/YYYY)</label>
+                        <input type="text" class="form-control inputs" id="employeeStartDate" placeholder="01/01/2000">
+                        <label for="employeeRate">Monthly Rate</label>
+                        <input type="text" class="form-control inputs" id="employeeRate" placeholder="2500">
+                        <button class="btn btn-primary btnAdd mt-2">Add Employee</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
 
 </body>
 

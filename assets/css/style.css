@@ -1,7 +1,13 @@
-
+.container {
+    margin: 0 auto;
+}
 
 .header-container {
     display: flex;
     justify-content: center;
     color: whitesmoke;
+}
+
+.card {
+    width: 1000px;
 }

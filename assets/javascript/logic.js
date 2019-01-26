@@ -39,11 +39,11 @@ $(document).ready(function () {
 
     //listen for added child function
     database.ref().on("child_added", function (snapshot) {
-        // snapshot.forEach((child) => {
-        let theEmployeeName = child.employeeName;
-        let theEmployeeRole = child.employeeRole;
-        let theEmployeeStartDate = child.employeeStartDate;
-        let theEmployeeRate = child.employeeRate;
+        // snapshot.forEach((snapshot) => {
+        let theEmployeeName = snapshot.employeeName;
+        let theEmployeeRole = snapshot.employeeRole;
+        let theEmployeeStartDate = snapshot.employeeStartDate;
+        let theEmployeeRate = snapshot.employeeRate;
         // });
         console.log("Name: " + theEmployeeName + ", Role: " + theEmployeeRole + ", Start Date: " + theEmployeeStartDate + ", Rate: " + theEmployeeRate);
     }, function (errorObject) {

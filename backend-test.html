@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
-    <script src="assets/javascript/logic.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <title>Train Schedule Activity</title>
@@ -20,98 +21,62 @@
 
 <body>
     <div class="container">
-        <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-                <h1>
-                    <center><u>Backend Testing Only!</u></center>
-                </h1>
-            </div>
-            <hr>
-            <input id="employee-name"></input>
-            <input id="employee-role"></input>
-            <input id="employee-rate"></input>
-            <input id="employee-start-date"></input>
-            <button id="btn-add">add</button>
-            <hr>
-            <div id="display-results"></div>
-            <hr>
-            <div class="container">
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th>Train Name</th>
-                            <th>Destination</th>
-                            <th>Frequency (Min)</th>
-                            <th>Next Arrival</th>
-                            <th>Estimated Minutes<br>
-                                Arrival (EMA)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Steelers</td>
-                            <td>Ashville</td>
-                            <td>45</td>
-                            <td>01:45AM</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>Eagles</td>
-                            <td>Durham</td>
-                            <td>120</td>
-                            <td>10:00PM</td>
-                            <td>60</td>
-                        </tr>
-                        <tr>
-                            <td>Forty Niner</td>
-                            <td>Charlotte</td>
-                            <td>240</td>
-                            <td>12:00PM</td>
-                            <td>45</td>
-                        </tr>
-                        <tr>
-                            <td>Saint</td>
-                            <td>Winston Salem</td>
-                            <td>600</td>
-                            <td>04:00PM</td>
-                            <td>60</td>
-                        </tr>
 
-                        <tr>
-                            <td>Viking</td>
-                            <td>Wrightsville</td>
-                            <td>15</td>
-                            <td>10:00PM</td>
-                            <td>120</td>
-                        </tr>
-                        <tr>
-                            <td>Titan</td>
-                            <td>Greensboro</td>
-                            <td>120</td>
-                            <td>10:00PM</td>
-                            <td>60</td>
-                        </tr>
-                        <tr>
-                            <td>Cardinal</td>
-                            <td>Raleigh</td>
-                            <td>120</td>
-                            <td>10:00PM</td>
-                            <td>60</td>
-                        </tr>
-                        <tr>
-                            <td>Patriot</td>
-                            <td>Lumberton</td>
-                            <td>120</td>
-                            <td>6:00AM</td>
-                            <td>240</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+        <div class="jumbotron text-center">
+            <h1 class="">Employee Data Management</h1>
+            <p>A Comprehensive Directory of Employee Billable Hours</p>
         </div>
-    </div>
+     
+            <div class="container"> 
 
+                <div class="card text-white bg-secondary mb-3">
 
+                    <div class="card-header">Current Employees</div>
+
+                    <div class="card-body">
+
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Employee Name</th>
+                                    <th>Role</th>
+                                    <th>Start Date</th>
+                                    <th>Months Worked</th>
+                                    <th>Monthly Rate ($)</th>
+                                    <th>Total Billed ($)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr id="employeeAdd">
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            Add Employee
+                        </div>
+                        <form class="form-submit">
+                            <div class="form-group form-modify">
+                                <label for="employeeName">Employee Name</label>
+                                <input type="text" class="form-control inputs" id="employeeName" placeholder="Jane Doe">
+                                <label for="employeeRole">Role</label>
+                                <input type="text" class="form-control inputs" id="employeeRole" placeholder="Engineer">
+                                <label for="employeeStartDate">Start Date (MM/DD/YYYY)</label>
+                                <input type="text" class="form-control inputs" id="employeeStartDate" placeholder="01/01/2000">
+                                <label for="employeeRate">Monthly Rate</label>
+                                <input type="text" class="form-control inputs" id="employeeRate" placeholder="2500">
+                                <button class="btn btn-primary btnAdd mt-2">Add Employee</button>
+                            </div>
+                        </form>
+
+                        </div> 
+                    </div>
+                </div>
+                            
 
 </body>
 

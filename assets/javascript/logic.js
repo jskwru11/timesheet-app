@@ -28,22 +28,22 @@ $(document).ready(function () {
         employeeRate = $("#employee-rate").val().trim();
         employeeStartDate = $("#employee-start-date").val().trim();
         console.log(employeeName, employeeRole, employeeRate, employeeStartDate);
-        var employeeData = {
+        database.ref().push({
             employeeName: employeeName,
             employeeRole: employeeRole,
             employeeRate: employeeRate,
             employeeStartDate: employeeStartDate
-        }
-        database.ref().push({ employeeData });
+        });
     });
 
     //listen for added child function
     database.ref().on("child_added", function (snapshot) {
         // snapshot.forEach((snapshot) => {
-        let theEmployeeName = snapshot.employeeName;
-        let theEmployeeRole = snapshot.employeeRole;
-        let theEmployeeStartDate = snapshot.employeeStartDate;
-        let theEmployeeRate = snapshot.employeeRate;
+        console.log("there");
+        let theEmployeeName = snapshot.val().employeeName;
+        let theEmployeeRole = snapshot.val().employeeRole;
+        let theEmployeeStartDate = snapshot.val().employeeStartDate;
+        let theEmployeeRate = snapshot.val().employeeRate;
         // });
         console.log("Name: " + theEmployeeName + ", Role: " + theEmployeeRole + ", Start Date: " + theEmployeeStartDate + ", Rate: " + theEmployeeRate);
     }, function (errorObject) {

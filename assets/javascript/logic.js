@@ -25,6 +25,7 @@ $("button").on("click", function (event) {
     employeeRole = $("#employee-role").val().trim();
     employeeRate = $("#employee-rate").val().trim();
     employeeStartDate = $("#employee-start-date").val().trim();
+    console.log(employeeName, employeeRole, employeeRate, employeeStartDate);
     var employeeData = {
         employeeName: employeeName,
         employeeRole: employeeRole,

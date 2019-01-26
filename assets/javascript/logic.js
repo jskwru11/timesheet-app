@@ -20,7 +20,7 @@ var employeeRate;
 
 
 //addEmployee function
-$("button").on("click", function (event) {
+$("#btn-add").on("click", function (event) {
     employeeName = $("#employee-name").val().trim();
     employeeRole = $("#employee-role").val().trim();
     employeeRate = $("#employee-rate").val().trim();

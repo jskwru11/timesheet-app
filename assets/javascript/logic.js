@@ -21,8 +21,9 @@ $(document).ready(function () {
 
 
     //addEmployee function
+    //TODO: update input field IDs
     $("#btn-add").on("click", function (event) {
-        console.log("here");
+        event.preventDefault();
         employeeName = $("#employee-name").val().trim();
         employeeRole = $("#employee-role").val().trim();
         employeeRate = $("#employee-rate").val().trim();
@@ -38,19 +39,17 @@ $(document).ready(function () {
 
     //listen for added child function
     database.ref().on("child_added", function (snapshot) {
-        // snapshot.forEach((snapshot) => {
-        console.log("there");
+        //TODO: put in to correct divs, not console.log
         let theEmployeeName = snapshot.val().employeeName;
         let theEmployeeRole = snapshot.val().employeeRole;
         let theEmployeeStartDate = snapshot.val().employeeStartDate;
         let theEmployeeRate = snapshot.val().employeeRate;
-        // });
         console.log("Name: " + theEmployeeName + ", Role: " + theEmployeeRole + ", Start Date: " + theEmployeeStartDate + ", Rate: " + theEmployeeRate);
     }, function (errorObject) {
         console.log("entries-error: " + errorObject.code);
     });
 
-
+    console.log(moment().diff(moment(1530000, "X"), "months"));
     //function for moment.js to calculate employeeMonthsWorked
 
 });
